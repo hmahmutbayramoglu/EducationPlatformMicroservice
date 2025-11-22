@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BEFB10D4-12D6-4730-B3F6-29C797AC1DE9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{634F165B-607E-49D0-8BBE-980F796B4D24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "catalog", "catalog", "{221C5DE9-F147-47F3-ADC7-9449C34B6319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EducationPlatformMicroservice.Catalog.Api", "EducationPlatformMicroservice.Catalog.Api\EducationPlatformMicroservice.Catalog.Api.csproj", "{DBEEBB7B-080F-477C-85E8-A77C23718FBC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2E23FA4D-ACB8-4781-894F-8D001C121098}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBEEBB7B-080F-477C-85E8-A77C23718FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEEBB7B-080F-477C-85E8-A77C23718FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEEBB7B-080F-477C-85E8-A77C23718FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEEBB7B-080F-477C-85E8-A77C23718FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E23FA4D-ACB8-4781-894F-8D001C121098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E23FA4D-ACB8-4781-894F-8D001C121098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E23FA4D-ACB8-4781-894F-8D001C121098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E23FA4D-ACB8-4781-894F-8D001C121098}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{634F165B-607E-49D0-8BBE-980F796B4D24} = {BEFB10D4-12D6-4730-B3F6-29C797AC1DE9}
+		{221C5DE9-F147-47F3-ADC7-9449C34B6319} = {634F165B-607E-49D0-8BBE-980F796B4D24}
+		{DBEEBB7B-080F-477C-85E8-A77C23718FBC} = {221C5DE9-F147-47F3-ADC7-9449C34B6319}
+	EndGlobalSection
+EndGlobal
