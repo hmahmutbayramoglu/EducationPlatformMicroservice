@@ -3,6 +3,6 @@
     public class MongoOption
     {
         public string DatabaseName { get; set; }
-        public string ConnnectionString { get; set; }
+        public string ConnectionString { get; set; }
     }
 }

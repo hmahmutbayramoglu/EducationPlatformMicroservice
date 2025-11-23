@@ -2,7 +2,7 @@
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Options
 {
-    public static class OptionExtension
+    public static class OptionExtensions
     {
         public static IServiceCollection AddOptionExtension(this IServiceCollection services)
         {

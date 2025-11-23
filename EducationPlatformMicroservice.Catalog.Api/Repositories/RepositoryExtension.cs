@@ -11,7 +11,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Repositories
             services.AddSingleton<IMongoClient, MongoClient>(sp =>
             {
                 var mongoOption = sp.GetRequiredService<MongoOption>();
-                return new MongoClient(mongoOption.ConnnectionString);
+                return new MongoClient(mongoOption.ConnectionString);
             });
 
             services.AddScoped(sp =>
