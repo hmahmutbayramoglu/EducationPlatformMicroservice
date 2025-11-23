@@ -1,0 +1,23 @@
+﻿namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
+{
+    public record CreateCategoryCommand(string name);
+
+
+
+ 
+
+
+
+    //public record X
+    //{
+    //    public string Name { get; init; }
+
+    //    public X(string name)
+    //    {
+    //        Name = name;
+    //    }
+    //    var x = new X("education");
+    //    x.Name = "sport"; //Immutable özellik - değiştirilemez
+    //}
+
+}

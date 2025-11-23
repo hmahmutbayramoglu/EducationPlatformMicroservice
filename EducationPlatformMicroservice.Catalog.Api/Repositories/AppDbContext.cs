@@ -2,6 +2,7 @@
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 using MongoDB.EntityFrameworkCore.Extensions;
 using System.Reflection;
 
@@ -12,6 +13,17 @@ namespace EducationPlatformMicroservice.Catalog.Api.Repositories
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+
+        public static AppDbContext Create(IMongoDatabase mongoDatabase)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>()
+                .UseMongoDB(mongoDatabase.Client, mongoDatabase.DatabaseNamespace.DatabaseName);
+
+            return new AppDbContext(optionsBuilder.Options);
+            
+ 
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
