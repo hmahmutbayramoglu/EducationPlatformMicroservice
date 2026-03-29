@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\EducationPlatformMicroservice.Shared\EducationPlatformMicroservice.Shared.csproj" />
+    <ProjectReference Include="..\EducationPlatformMicroservice.Shared\EducationPlatformMicroservice.Shared.csproj" />
   </ItemGroup>
 
 </Project>
