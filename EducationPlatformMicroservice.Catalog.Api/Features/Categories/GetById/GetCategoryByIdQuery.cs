@@ -4,6 +4,6 @@ using MediatR;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetById
 {
-    public record GetCategoryByIdQuery(Guid Id) : IRequest<ServiceResult<CategoryDto>>;
+    public record GetCategoryByIdQuery(Guid Id) : IRequestByServiceResult<CategoryDto>;
  
 }

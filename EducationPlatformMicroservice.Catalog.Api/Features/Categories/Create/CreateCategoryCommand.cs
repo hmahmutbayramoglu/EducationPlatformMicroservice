@@ -3,7 +3,7 @@ using MediatR;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
 {
-    public record CreateCategoryCommand(string name):IRequest<ServiceResult<CreateCategoryResponse>>;
+    public record CreateCategoryCommand(string name): IRequestByServiceResult<CreateCategoryResponse>;
 
 
 
