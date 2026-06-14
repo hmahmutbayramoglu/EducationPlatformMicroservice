@@ -11,3 +11,7 @@ Content-Type: application/json
   "name": "test category2"
 }
 ###
+
+GET {{BaseAddress}}/api/categories/08de8a9f-1c95-d97e-1ece-51af622f0000
+Accept: application/json 
+###

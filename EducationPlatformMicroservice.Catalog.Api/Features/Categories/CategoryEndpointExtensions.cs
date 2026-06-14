@@ -1,5 +1,6 @@
 ﻿using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create;
 using EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetAll;
+using EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetById;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories
 {
@@ -9,7 +10,8 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories
         {
             webApplication.MapGroup("api/categories")
                 .CreateCategoryGroupItemEndpoint()
-                .GetAllCategoryGroupItemEndpoint();
+                .GetAllCategoryGroupItemEndpoint()
+                .GetCategoryByIdGroupItemEndpoint();
         }
 
     }
