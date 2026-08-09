@@ -8,7 +8,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories
     {
         public static void AddCategoryGroupEndpointExtensions(this WebApplication webApplication)
         {
-            webApplication.MapGroup("api/categories")
+            webApplication.MapGroup("api/categories").WithTags("Categories")
                 .CreateCategoryGroupItemEndpoint()
                 .GetAllCategoryGroupItemEndpoint()
                 .GetCategoryByIdGroupItemEndpoint();

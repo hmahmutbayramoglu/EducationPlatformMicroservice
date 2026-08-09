@@ -1,17 +1,29 @@
 @BaseAddress = http://localhost:5055
-
+@categoryId = 08de8a9f-1c95-d97e-1ece-51af622f0000
 GET {{BaseAddress}}/api/categories
 Accept: application/json 
 ###
 
-Post {{BaseAddress}}/api/categories
+POST {{BaseAddress}}/api/categories
 Accept: application/json 
 Content-Type: application/json 
 {
-  "name": "test category2"
+  "name": "test category3"
 }
 ###
 
-GET {{BaseAddress}}/api/categories/08de8a9f-1c95-d97e-1ece-51af622f0000
+GET {{BaseAddress}}/api/categories/{{categoryId}}
 Accept: application/json 
 ###
+
+POST {{BaseAddress}}/api/courses
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "test course4",
+  "description": "test description",
+  "price": 100,
+  "imageUrl": "http://example.com/picture.jpg",
+  "categoryId":  "{{categoryId}}"
+}

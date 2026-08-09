@@ -10,6 +10,8 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
 
             routeGroup.MapPost("/", async (CreateCategoryCommand command, IMediator mediator) =>
              (await mediator.Send(command)).ToGenericResult())
+                .WithName("CreateCategory")
+                .Produces<Guid>(statusCode: StatusCodes.Status201Created)
                 .AddEndpointFilter<ValidationFilter<CreateCategoryCommand>>();
 
             return routeGroup;

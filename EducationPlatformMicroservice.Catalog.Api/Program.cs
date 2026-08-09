@@ -1,5 +1,6 @@
 using EducationPlatformMicroservice.Catalog.Api;
 using EducationPlatformMicroservice.Catalog.Api.Features.Categories;
+using EducationPlatformMicroservice.Catalog.Api.Features.Courses;
 using EducationPlatformMicroservice.Catalog.Api.Features.Options;
 using EducationPlatformMicroservice.Catalog.Api.Repositories;
 
@@ -19,6 +20,7 @@ var app = builder.Build();
 
 
 app.AddCategoryGroupEndpointExtensions();
+app.AddCourseGroupEndpointExtensions();
 
 
 

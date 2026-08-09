@@ -19,7 +19,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Repositories
             builder.Property(c => c.CreatedDate).HasElementName("createdDate");
             builder.Property(c => c.CreatorUserId).HasElementName("creatorUserId");
             builder.Property(c => c.CategoryId).HasElementName("categoryId");
-            builder.Property(c => c.Picture).HasElementName("picture");
+            builder.Property(c => c.ImageUrl).HasElementName("imageUrl").HasMaxLength(700);
             builder.Ignore(c => c.Category); // İlişkiyi MongoDB tarafında tutmayacağız.
 
             builder.OwnsOne(c => c.Feature, feature => // ıddentity olarak tutulmuyor. Course entity'sinin içinde gömülü olarak tutuluyor.

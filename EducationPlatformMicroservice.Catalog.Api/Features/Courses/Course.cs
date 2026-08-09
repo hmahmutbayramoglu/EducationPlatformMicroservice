@@ -9,7 +9,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses
         public string Description { get; set; } = default!;
         public decimal Price { get; set; }
         public Guid CreatorUserId { get; set; }
-        public string? Picture { get; set; }
+        public string? ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
 
         public Guid CategoryId { get; set; }
