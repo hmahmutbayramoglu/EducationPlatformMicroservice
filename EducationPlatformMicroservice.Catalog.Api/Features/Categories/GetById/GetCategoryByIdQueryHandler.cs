@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Dtos;
 using EducationPlatformMicroservice.Catalog.Api.Repositories;
-using EducationPlatformMicroservice.Shared;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
+
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetById
 {

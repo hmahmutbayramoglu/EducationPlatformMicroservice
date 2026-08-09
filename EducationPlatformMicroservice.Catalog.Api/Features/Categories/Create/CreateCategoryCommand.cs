@@ -1,7 +1,4 @@
-﻿using EducationPlatformMicroservice.Shared;
-using MediatR;
-
-namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
+﻿namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
 {
     public record CreateCategoryCommand(string name): IRequestByServiceResult<CreateCategoryResponse>;
 

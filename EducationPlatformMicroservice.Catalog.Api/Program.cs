@@ -2,7 +2,6 @@ using EducationPlatformMicroservice.Catalog.Api;
 using EducationPlatformMicroservice.Catalog.Api.Features.Categories;
 using EducationPlatformMicroservice.Catalog.Api.Features.Options;
 using EducationPlatformMicroservice.Catalog.Api.Repositories;
-using EducationPlatformMicroservice.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
  

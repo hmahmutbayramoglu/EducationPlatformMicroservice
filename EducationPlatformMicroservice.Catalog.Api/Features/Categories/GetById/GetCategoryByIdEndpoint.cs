@@ -1,7 +1,4 @@
-﻿using EducationPlatformMicroservice.Shared.Extensions;
-using MediatR;
-
-namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetById
+﻿namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetById
 {
     public static class GetCategoryByIdEndpoint
     {

@@ -1,9 +1,5 @@
 ﻿using EducationPlatformMicroservice.Catalog.Api.Repositories;
-using EducationPlatformMicroservice.Shared;
-using MassTransit;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
+
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
 {

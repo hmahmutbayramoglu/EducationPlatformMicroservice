@@ -1,8 +1,5 @@
-﻿using EducationPlatformMicroservice.Shared.Extensions;
-using EducationPlatformMicroservice.Shared.Filters;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-
+﻿using EducationPlatformMicroservice.Shared.Filters;
+ 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
 {
     public static class CreateCategoryEndpoint

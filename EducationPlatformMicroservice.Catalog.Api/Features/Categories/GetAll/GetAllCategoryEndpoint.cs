@@ -1,10 +1,4 @@
-﻿using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create;
-using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Dtos;
-using EducationPlatformMicroservice.Shared;
-using EducationPlatformMicroservice.Shared.Extensions;
-using EducationPlatformMicroservice.Shared.Filters;
-using MediatR;
-
+﻿
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetAll
 {
     public static class GetAllCategoryEndpoint
