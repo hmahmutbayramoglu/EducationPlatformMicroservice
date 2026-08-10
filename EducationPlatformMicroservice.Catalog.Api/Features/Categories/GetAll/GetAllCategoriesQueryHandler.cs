@@ -5,9 +5,9 @@ using EducationPlatformMicroservice.Catalog.Api.Repositories;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetAll
 {
-    public class GetAllCategoryQueryHandler(AppDbContext appDbContext,IMapper mapper) : IRequestHandler<GetAllCategoryQuery, ServiceResult<List<CategoryDto>>>
+    public class GetAllCategoriesQueryHandler(AppDbContext appDbContext,IMapper mapper) : IRequestHandler<GetAllCategoriesQuery, ServiceResult<List<CategoryDto>>>
     {
-        public async Task<ServiceResult<List<CategoryDto>>> Handle(GetAllCategoryQuery request, CancellationToken cancellationToken)
+        public async Task<ServiceResult<List<CategoryDto>>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
         {
             
             var categories = appDbContext.Categories.ToListAsync(cancellationToken);

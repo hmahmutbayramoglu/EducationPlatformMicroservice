@@ -27,3 +27,9 @@ Content-Type: application/json
   "imageUrl": "http://example.com/picture.jpg",
   "categoryId":  "{{categoryId}}"
 }
+###
+
+ 
+GET {{BaseAddress}}/api/courses
+Accept: application/json 
+###

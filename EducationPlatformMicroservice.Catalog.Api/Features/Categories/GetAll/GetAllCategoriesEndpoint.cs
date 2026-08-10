@@ -1,7 +1,7 @@
 ﻿
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetAll
 {
-    public static class GetAllCategoryEndpoint
+    public static class GetAllCategoriesEndpoint
     {
         public static RouteGroupBuilder GetAllCategoryGroupItemEndpoint(this RouteGroupBuilder routeGroup)
         {
@@ -9,7 +9,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetAll
 
             routeGroup.MapGet("/",
                 async (IMediator mediator) =>
-                    (await mediator.Send(new GetAllCategoryQuery())).ToGenericResult())
+                    (await mediator.Send(new GetAllCategoriesQuery())).ToGenericResult())
                 .WithName("GetAllCategory");
 
             return routeGroup;

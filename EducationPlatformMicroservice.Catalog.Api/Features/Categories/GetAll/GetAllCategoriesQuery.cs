@@ -2,6 +2,6 @@
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.GetAll
 {
-    public class GetAllCategoryQuery : IRequestByServiceResult<List<CategoryDto>>;
+    public class GetAllCategoriesQuery : IRequestByServiceResult<List<CategoryDto>>;
   
 }
