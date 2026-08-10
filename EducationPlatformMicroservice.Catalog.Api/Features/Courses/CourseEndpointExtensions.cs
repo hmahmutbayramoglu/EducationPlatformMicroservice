@@ -2,6 +2,7 @@
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Create;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.GetAll;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.GetById;
+using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Update;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses
 {
@@ -12,7 +13,8 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses
             webApplication.MapGroup("api/courses").WithTags("Courses")
                 .CreateCourseGroupItemEndpoint()
                 .GetAllCourseGroupItemEndpoint()
-                .GetByIdCourseGroupItemEndpoint();
+                .GetByIdCourseGroupItemEndpoint()
+                .UpdateCourseGroupItemEndpoint();
 
 
 
