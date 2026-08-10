@@ -1,5 +1,6 @@
 @BaseAddress = http://localhost:5055
 @categoryId = 08de8a9f-1c95-d97e-1ece-51af622f0000
+@courseId = c1fea2cb-d0e7-44dc-b960-3a06fdb175da
 GET {{BaseAddress}}/api/categories
 Accept: application/json 
 ###
@@ -31,5 +32,9 @@ Content-Type: application/json
 
  
 GET {{BaseAddress}}/api/courses
+Accept: application/json 
+###
+
+GET {{BaseAddress}}/api/courses/{{courseId}}
 Accept: application/json 
 ###
