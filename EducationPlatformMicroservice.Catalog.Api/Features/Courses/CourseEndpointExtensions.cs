@@ -1,5 +1,6 @@
 ﻿using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Create;
+using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Delete;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.GetAll;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.GetById;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Update;
@@ -14,7 +15,8 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses
                 .CreateCourseGroupItemEndpoint()
                 .GetAllCourseGroupItemEndpoint()
                 .GetByIdCourseGroupItemEndpoint()
-                .UpdateCourseGroupItemEndpoint();
+                .UpdateCourseGroupItemEndpoint()
+                .DeleteCourseGroupItemEndpoint();
 
 
 
