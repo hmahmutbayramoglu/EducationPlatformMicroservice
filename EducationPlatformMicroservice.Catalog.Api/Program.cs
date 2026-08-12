@@ -18,7 +18,7 @@ builder.Services.AddCommonServiceExtensions(typeof(CatalogAssembly));
 var app = builder.Build();
 
 
-
+await app.AddSeedDataExtension();
 app.AddCategoryGroupEndpointExtensions();
 app.AddCourseGroupEndpointExtensions();
 
