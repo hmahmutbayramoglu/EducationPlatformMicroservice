@@ -8,6 +8,7 @@
             routeGroup.MapGet("/{id:guid}", // :guid kısıtlama belirtiyoruz guid olmayan bir id gelirse 404 dönecek
                 async (IMediator mediator,Guid id) =>
                     (await mediator.Send(new GetCategoryByIdQuery(id))).ToGenericResult())
+                        .MapToApiVersion(1, 0)
                 .WithName("GetByIdCategory");
             return routeGroup;
         }

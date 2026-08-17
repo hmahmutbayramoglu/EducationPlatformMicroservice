@@ -1,4 +1,5 @@
-﻿using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create;
+﻿using Asp.Versioning.Builder;
+using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Create;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.Delete;
 using EducationPlatformMicroservice.Catalog.Api.Features.Courses.GetAll;
@@ -10,9 +11,10 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses
 {
     public static class CourseEndpointExtensions
     {
-        public static void AddCourseGroupEndpointExtensions(this WebApplication webApplication)
+        public static void AddCourseGroupEndpointExtensions(this WebApplication webApplication, ApiVersionSet apiVersionSet)
         {
-            webApplication.MapGroup("api/courses").WithTags("Courses")
+            webApplication.MapGroup("api/v{version:apiVersion}/courses").WithTags("Courses")
+                .WithApiVersionSet(apiVersionSet)
                 .CreateCourseGroupItemEndpoint()
                 .GetAllCourseGroupItemEndpoint()
                 .GetByIdCourseGroupItemEndpoint()

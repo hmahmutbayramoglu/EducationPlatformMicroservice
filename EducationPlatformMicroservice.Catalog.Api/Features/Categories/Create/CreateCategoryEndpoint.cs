@@ -12,6 +12,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create
              (await mediator.Send(command)).ToGenericResult())
                 .WithName("CreateCategory")
                 .Produces<Guid>(statusCode: StatusCodes.Status201Created)
+                .MapToApiVersion(1,0)
                 .AddEndpointFilter<ValidationFilter<CreateCategoryCommand>>();
 
             return routeGroup;

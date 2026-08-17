@@ -10,6 +10,7 @@ namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses.Update
             group.MapPut("/",
                 async (UpdateCourseCommand command, IMediator mediator) =>
                     (await mediator.Send(command)).ToGenericResult())
+                        .MapToApiVersion(1, 0)
             .WithName("UpdateCourse")
             .AddEndpointFilter<ValidationFilter<UpdateCourseCommand>>();
 
