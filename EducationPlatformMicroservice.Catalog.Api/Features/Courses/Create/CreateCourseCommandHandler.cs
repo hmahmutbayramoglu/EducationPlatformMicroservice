@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using EducationPlatformMicroservice.Catalog.Api.Repositories;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses.Create

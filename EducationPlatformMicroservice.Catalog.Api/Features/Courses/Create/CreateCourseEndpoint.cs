@@ -1,5 +1,4 @@
-﻿using EducationPlatformMicroservice.Catalog.Api.Features.Categories.Create;
-using EducationPlatformMicroservice.Shared.Filters;
+﻿using EducationPlatformMicroservice.Shared.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EducationPlatformMicroservice.Catalog.Api.Features.Courses.Create
