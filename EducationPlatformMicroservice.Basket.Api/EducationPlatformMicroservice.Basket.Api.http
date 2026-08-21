@@ -1,0 +1,6 @@
+@EducationPlatformMicroservice.Basket.Api_HostAddress = http://localhost:5135
+
+GET {{EducationPlatformMicroservice.Basket.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
