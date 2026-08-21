@@ -12,8 +12,11 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
         public async Task<ServiceResult> Handle(AddBasketItemCommand request, CancellationToken cancellationToken)
         {
 
+            //Fast fail
+
+
             // TODO: change userId
-            Guid userId = Guid.NewGuid(); 
+            Guid userId = Guid.NewGuid();
             var cacheKey = String.Format(BasketConst.BasketCacheKey, userId);
 
             var basketAsString = await distributedCache.GetStringAsync(cacheKey, cancellationToken);
@@ -36,28 +39,32 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
                     UserId = userId,
                     BasketItems = [newBasketItem]
                 };
-            }
-            else
-            {
-                currentBasket = JsonSerializer.Deserialize<BasketDto>(basketAsString);
+                await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
 
-                var existingBasketItem = currentBasket.BasketItems.FirstOrDefault(x => x.CourseId == request.CourseId);
-                if (existingBasketItem is not null)
-                {
-                    currentBasket.BasketItems.Remove(existingBasketItem);
-                    currentBasket.BasketItems.Add(newBasketItem);
-                }
-                else
-                {
-                    currentBasket.BasketItems.Add(newBasketItem);
-                }
-            }
-
-
-                basketAsString = JsonSerializer.Serialize(currentBasket);
-                await distributedCache.SetStringAsync(cacheKey, basketAsString, cancellationToken);
                 return ServiceResult.SuccessAsNoContent();
+            }
 
+            currentBasket = JsonSerializer.Deserialize<BasketDto>(basketAsString);
+
+            var existingBasketItem = currentBasket!.BasketItems.FirstOrDefault(x => x.CourseId == request.CourseId);
+            if (existingBasketItem is not null)
+            {
+                currentBasket.BasketItems.Remove(existingBasketItem);
+            }
+            currentBasket.BasketItems.Add(newBasketItem);
+
+            await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
+
+            return ServiceResult.SuccessAsNoContent();
+
+
+        }
+
+
+        private async Task CreateCacheAsync(BasketDto basket, string cacheKey, CancellationToken cancellationToken)
+        {
+            var basketAsString = JsonSerializer.Serialize(basket);
+            await distributedCache.SetStringAsync(cacheKey, basketAsString, cancellationToken);
 
         }
     }
