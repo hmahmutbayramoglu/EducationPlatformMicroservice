@@ -16,7 +16,8 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
 
 
             // TODO: change userId
-            Guid userId = Guid.NewGuid();
+          //  Guid userId = Guid.NewGuid();
+            Guid userId = Guid.Parse("7430ed03-4e1c-4fc4-b4a0-6056b2fad000");
             var cacheKey = String.Format(BasketConst.BasketCacheKey, userId);
 
             var basketAsString = await distributedCache.GetStringAsync(cacheKey, cancellationToken);
@@ -41,7 +42,7 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
                 };
                 await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
 
-                return ServiceResult.SuccessAsNoContent();
+                return ServiceResult.SuccessAsNoContent(); 
             }
 
             currentBasket = JsonSerializer.Deserialize<BasketDto>(basketAsString);
@@ -49,6 +50,8 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
             var existingBasketItem = currentBasket!.BasketItems.FirstOrDefault(x => x.CourseId == request.CourseId);
             if (existingBasketItem is not null)
             {
+            // TODO: business rules
+
                 currentBasket.BasketItems.Remove(existingBasketItem);
             }
             currentBasket.BasketItems.Add(newBasketItem);
