@@ -1,7 +1,7 @@
 @EducationPlatformMicroservice.Basket.Api_HostAddress = http://localhost:5135
 @BaseAddress = http://localhost:5135
 @categoryId = 08defa5c-f3ee-be55-1ece-51af622f0000
-@courseId = 08defc6f-92ff-a11f-0015-5dd3501f0000
+@courseId = 3fa85f64-5717-4562-b3fc-2c963f66afa6
 @userId = 08defa5d-555a-cd4c-1ece-51af622f0000
 
 GET {{BaseAddress}}/weatherforecast/
@@ -14,10 +14,17 @@ POST {{BaseAddress}}/api/v1/baskets/item
 Accept: application/json
 Content-type: application/json
 {
-  "courseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "courseId": "{{courseId}}",
   "courseName": "test2",
   "coursePrice": 140,
   "imageUrl": "imageurl.jpg"
 }
+
+###
+
+DELETE {{BaseAddress}}/api/v1/baskets/item/{{courseId}}
+Accept: application/json
+Content-type: application/json
+ 
 
 ###

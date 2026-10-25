@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning.Builder;
 using EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketItem;
+using EducationPlatformMicroservice.Basket.Api.Features.Baskets.DeleteBasketItem;
 
 namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets
 {
@@ -9,7 +10,8 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets
         {
             webApplication.MapGroup("api/v{version:apiVersion}/baskets").WithTags("Baskets")
                 .WithApiVersionSet(apiVersionSet)
-               .AddBasketGroupItemEndpoint();
+               .AddBasketGroupItemEndpoint()
+               .DeleteBasketGroupItemEndpoint();
         }
     }
 }

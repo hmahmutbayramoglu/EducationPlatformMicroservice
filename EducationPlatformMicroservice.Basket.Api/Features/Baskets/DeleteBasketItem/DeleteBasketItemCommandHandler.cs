@@ -27,7 +27,7 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.DeleteBasket
             var currentBasket = JsonSerializer.Deserialize<BasketDto>(basketAsString);
 
 
-            var basketItemToDelete = currentBasket!.BasketItems.FirstOrDefault(x => x.CourseId == request.CourseId);
+            var basketItemToDelete = currentBasket!.BasketItems.FirstOrDefault(x => x.CourseId == request.Id);
 
             if (basketItemToDelete is null)
             {

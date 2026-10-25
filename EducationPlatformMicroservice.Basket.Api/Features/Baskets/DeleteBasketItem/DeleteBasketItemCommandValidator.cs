@@ -6,7 +6,7 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.DeleteBasket
     {
         public DeleteBasketItemCommandValidator()
         {
-            RuleFor(x => x.CourseId).NotEmpty().WithMessage("CourseId is required.");
+            RuleFor(x => x.Id).NotEmpty().WithMessage("Basket is required.");
         }
     }
 }
