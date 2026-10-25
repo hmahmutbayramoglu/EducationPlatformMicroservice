@@ -42,7 +42,7 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
                 currentBasket = new BasketDto
                 {
                     UserId = userId,
-                    BasketItems = [newBasketItem]
+                    Items = [newBasketItem]
                 };
                 await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
 
@@ -51,14 +51,14 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
 
             currentBasket = JsonSerializer.Deserialize<BasketDto>(basketAsString);
 
-            var existingBasketItem = currentBasket!.BasketItems.FirstOrDefault(x => x.CourseId == request.CourseId);
+            var existingBasketItem = currentBasket!.Items.FirstOrDefault(x => x.CourseId == request.CourseId);
             if (existingBasketItem is not null)
             {
             // TODO: business rules
 
-                currentBasket.BasketItems.Remove(existingBasketItem);
+                currentBasket.Items.Remove(existingBasketItem);
             }
-            currentBasket.BasketItems.Add(newBasketItem);
+            currentBasket.Items.Add(newBasketItem);
 
             await CreateCacheAsync(currentBasket, cacheKey, cancellationToken);
 

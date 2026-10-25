@@ -27,13 +27,13 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.DeleteBasket
             var currentBasket = JsonSerializer.Deserialize<BasketDto>(basketAsString);
 
 
-            var basketItemToDelete = currentBasket!.BasketItems.FirstOrDefault(x => x.CourseId == request.Id);
+            var basketItemToDelete = currentBasket!.Items.FirstOrDefault(x => x.CourseId == request.Id);
 
             if (basketItemToDelete is null)
             {
                 return ServiceResult.Error("Basket item not found.", HttpStatusCode.NotFound);
             }
-            currentBasket.BasketItems.Remove(basketItemToDelete);
+            currentBasket.Items.Remove(basketItemToDelete);
 
             basketAsString = JsonSerializer.Serialize(currentBasket);
             await distributedCache.SetStringAsync(cacheKey, basketAsString, cancellationToken);
