@@ -1,13 +1,14 @@
 ﻿using EducationPlatformMicroservice.Basket.Api.Const;
 using EducationPlatformMicroservice.Basket.Api.Dtos;
 using EducationPlatformMicroservice.Shared;
+using EducationPlatformMicroservice.Shared.Services;
 using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Text.Json;
 
 namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketItem
 {
-    public class AddBasketItemCommandHandler(IDistributedCache distributedCache) : IRequestHandler<AddBasketItemCommand, ServiceResult>
+    public class AddBasketItemCommandHandler(IDistributedCache distributedCache, IIdentityService identityService) : IRequestHandler<AddBasketItemCommand, ServiceResult>
     {
         public async Task<ServiceResult> Handle(AddBasketItemCommand request, CancellationToken cancellationToken)
         {
@@ -17,7 +18,10 @@ namespace EducationPlatformMicroservice.Basket.Api.Features.Baskets.AddBasketIte
 
             // TODO: change userId
           //  Guid userId = Guid.NewGuid();
-            Guid userId = Guid.Parse("7430ed03-4e1c-4fc4-b4a0-6056b2fad000");
+          //  Guid userId = Guid.Parse("7430ed03-4e1c-4fc4-b4a0-6056b2fad000");
+            
+            Guid userId = identityService.GetUserId;
+
             var cacheKey = String.Format(BasketConst.BasketCacheKey, userId);
 
             var basketAsString = await distributedCache.GetStringAsync(cacheKey, cancellationToken);
